@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+  	<ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Search Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+<ion-card>
+  <div *ngIf="movie">
+  	<img src="{{movie.Poster}}" />
+  	<ion-card-header>
+    	<ion-card-title>Movie Title</ion-card-title>
+  	</ion-card-header>
+  	<ion-item>
+  		<ion-label>{{movie.Title}}</ion-label>
+  	</ion-item>
+  	<ion-card-header>
+    	<ion-card-title>Year</ion-card-title>
+  	</ion-card-header>
+  	<ion-item>
+  		<ion-label>{{movie.Year}}</ion-label>
+  	</ion-item>
+  	<ion-card-header>
+    	<ion-card-title>Actors</ion-card-title>
+  	</ion-card-header>
+  	<ion-item>
+  		<ion-label>{{movie.Actors}}</ion-label>
+  	</ion-item>
+  	<ion-card-header>
+    	<ion-card-title>Movie Type</ion-card-title>
+  	</ion-card-header>
+  	<ion-item>
+  		<ion-label>{{movie.Genre}}</ion-label>
+  	</ion-item>
+  	<ion-card-content>{{movie.Plot}}</ion-card-content>
+  	<ion-card-header>
+    	<ion-card-title>Movie Ratings</ion-card-title>
+  	</ion-card-header>
+  	<ion-item *ngFor="let item of movie.Ratings">
+  		<ion-label>{{item.Source}}: {{item.Value}}</ion-label>
+  	</ion-item>
+  </div>
+</ion-card>
+</ion-content>

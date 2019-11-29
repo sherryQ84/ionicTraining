@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-title>
+      Notes
+    </ion-title>
+	<ion-buttons slot="primary">
+    <ion-button color="secondary" fill="solid" (click)="addNote()">
+      <ion-icon slot="end" name="add-circle"></ion-icon>
+    </ion-button>
+  	</ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-padding">
+    The world is your oyster.
+
+    <br><br>
+    Below is ion-item-sliding example
+	<ion-list>
+		<ion-item-sliding *ngFor="let item of notesService.notes" >
+			<ion-item>
+				<ion-label>{{item.title}}</ion-label>
+				<ion-button fill="outline" slot="end" [routerLink]="'/notes/'+item.id" routerDirection="forward">View</ion-button>
+			</ion-item>
+
+			<ion-item-options side="end">
+				<ion-item-option (click)="deletePressed(item)" color="danger">Delete</ion-item-option>
+			</ion-item-options>
+		</ion-item-sliding>
+	</ion-list>
+
+	<br><br>
+    Below is ion-list example
+	<ion-list>
+		<ion-item *ngFor="let item of notesService.notes" [routerLink]="'/notes/'+item.id" routerDirection="forward">
+			<ion-label>{{item.title}}</ion-label>
+		</ion-item>
+	</ion-list>
+
+    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
+  </div>
+</ion-content>

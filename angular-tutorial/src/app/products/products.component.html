@@ -1,0 +1,22 @@
+<h2>Product Page</h2>
+<p>This is products works!</p>
+
+<input type="text" name="productName" [(ngModel)]="product.name">
+<p>Product: {{product.name | uppercase}}</p>
+<p>Price: {{product.price | number: '1.2-5'}}</p>
+<ul>
+	<li class="product" [class.selected]="selectedItem && selectedItem.name == item.name" 
+	*ngFor="let item of products" (click)="productSelected(item)">{{item.name}} - {{item.price}}</li>
+</ul>
+<div *ngIf="selectedItem">
+	<h3>Selected Item:</h3>
+	<p>{{selectedItem.name}} - {{selectedItem.price}}</p>
+</div>
+<div *ngIf="intProducts">
+	<h3>Internet Product:</h3>
+	<ul>
+		<li *ngFor="let item of intProducts">
+			{{item.name}}
+		</li>
+	</ul>
+</div>

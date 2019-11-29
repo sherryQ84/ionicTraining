@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+  	<ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Weather Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<ion-card>
+		<div *ngIf="weathers">
+			<img src="http://openweathermap.org/img/wn/{{weathers.weather[0].icon}}@2x.png" />
+			<ion-card-header>
+				<ion-card-subtitle><span class="detail-title">{{weathers.dt * 1000 | date:'medium'}}</span>
+				</ion-card-subtitle>
+			</ion-card-header>
+			<ion-card-content>
+				<ion-grid >
+					<ion-row>
+						<ion-col><span class="detail-title">Weather:</span></ion-col>
+						<ion-col><p style="font-size:1.0em">{{weathers.weather[0].main}}</p></ion-col>
+					</ion-row>
+					<ion-row>
+						<ion-col><span class="detail-title">Desciption:</span></ion-col>
+						<ion-col><p style="font-size:1.0em">{{weathers.weather[0].description}}</p></ion-col>
+					</ion-row>
+					<ion-row>
+						<ion-col><span class="detail-title">Tempreture:</span></ion-col>
+						<ion-col><p style="font-size:1.0em">{{weathers.temp.day - 273.15 | number}} &deg;C</p></ion-col>
+					</ion-row>
+					<ion-row>
+						<ion-col><span class="detail-title">Pressure:</span></ion-col>
+						<ion-col><p style="font-size:1.0em">{{weathers.pressure}}</p></ion-col>
+					</ion-row>
+					<ion-row>
+						<ion-col><span class="detail-title">Humidity:</span></ion-col>
+						<ion-col><p style="font-size:1.0em">{{weathers.humidity}}</p></ion-col>
+					</ion-row>
+					<ion-row>
+						<ion-col>
+							<p><span class="day-color"><ion-icon name="sunny"></ion-icon></span> {{weathers.sunrise * 1000 | date:'shortTime'}}</p>
+						</ion-col>
+						<ion-col>
+							<p><span class="night-color"><ion-icon name="moon"></ion-icon></span> {{weathers.sunset * 1000 | date:'shortTime'}}</p>
+						</ion-col>
+					</ion-row>
+				</ion-grid>
+			</ion-card-content>
+		</div>
+	</ion-card>
+</ion-content>

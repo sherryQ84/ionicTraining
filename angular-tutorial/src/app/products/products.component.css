@@ -1,0 +1,10 @@
+.product
+{
+	font-family: sans-serif;
+}
+
+.product.selected 
+{
+	background-color: yellow;
+	color: grey;
+}

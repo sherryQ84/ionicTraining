@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar color="danger">
+  	<ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Detail</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+	<ion-card>
+<ion-input placeholder="Enter title" [(ngModel)]="item.title" (change)="saveInfo()"></ion-input>
+<ion-item>
+  <ion-textarea placeholder="Enter more information" [(ngModel)]="item.content" (change)="saveInfo()"></ion-textarea>
+</ion-item>
+</ion-card>
+</ion-content>

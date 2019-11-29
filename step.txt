@@ -1,0 +1,123 @@
+//Install ionic vis NPM
+npm install -g ionic
+
+//check ionic version
+ionic -v
+
+//create new project
+ionic start *projectnamewithoutspace* *templates*
+ionic start helloworld blank
+
+//go into directory
+cd helloworld
+
+//run the application
+ionic serve
+
+//to setup the IDE to support typescript
+ctrl + shift + p => install package control
+ctrl + shift + p => install package
+wait
+select typescript
+
+//click lower right to change typescript for .ts file
+
+//challenge
+user should not be able to press decrement when number is 0.
+-> show message "Number cannot be less than 0"
+
+-> show toast (inform without interupting the GUI)
+// Angular (ion-toast)
+import - define on top of the code/example 
+inject - insert in between () of constructor - use ',' if need more than one
+implement - the function from example given
+
+//line reindent
+ctrl + A - Edit-Line - Reindent
+
+// create 2 more buttons
+-> show alert -> Alert controller 
+	(inform by interupting the GUI - confirmation message)
+	(to delete data, change role:destructive)
+
+-> show action sheet -> action sheet
+	(make user to select something not more than 5 items)
+
+https://tinyurl.com/ionickl2019
+http://stackshare.io
+https://ionicframework.com/docs/v3
+https://reqres.in/api/products
+
+ctrl + c -> stop project
+
+ng new angular-tutorial
+cd angular-tutorial
+ng serve
+
+new cmd > cd angular-tutorial 
+ng g component products
+ng g service http
+
+=============================================================================================================================
+Day2
+
+// putting notes service inside services folder
+ionic g service services/Notes
+
+ionic g page detail
+
+// change link word to display as your wish
+change home word to notes in app-routing.module.ts
+change detail word to notes/:id
+ 
+const routes: Routes = [
+  { path: '', redirectTo: 'notes', pathMatch: 'full' },
+  { path: 'notes', loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)},
+  {
+    path: 'notes/:id',
+    loadChildren: () => import('./detail/detail.module').then( m => m.DetailPageModule)
+  },
+];
+
+// add ion list
+// add ion toolbar add ion buttons -> (slot=end shows icon at left side, slot=start show icon at right side)
+// add to prompt input alert when press button
+// change button icon -> refer to https://ionicons.com/
+
+// add ion-item-sliding to show delete button and call the delete function
+// (ion-input and ion-textarea )on detail page, show on form and add update button so that user can edit the content and title
+
+// create movie search page
+http://omdbapi.com/
+
+CRUD (standard operation)
+
+Operation	Method				URL
+====================================================================
+Create		POST				/movies
+Read		GET				/movies or(...) /movies/id
+Update		POST/PUT			/movies/id
+Delete		DELETE (rarely APIable)		/movies/id
+
+//API key for training
+http://www.omdbapi.com/?t=star&apiKey=87d10179
+?t -> title
+?s -> search
+?i -> info	(http://www.omdbapi.com/?i=tt0480249&apiKey=87d10179)
+&plot=full -> expand the plot info	(http://www.omdbapi.com/?i=tt0480249&plot=full&apiKey=87d10179)
+
+// for easier reading in google chrome for api data, install JSON formatter
+https://chrome.google.com/webstore/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa?hl=en
+
+// categories by different type
+http://www.omdbapi.com/?s=legend&type=series&apiKey=87d10179
+http://www.omdbapi.com/?s=legend&type=movie&apiKey=87d10179
+				 ----------
+
+==============================================================================================================================
+mac wonder cloud -> build mirror for IOS app testing, paid per usage				     
+
+
+need JDK 8 installer, Android ver28, android studio with vitual device of Android Rio OS to start virtual simulation.
+
+C:\Users\User\AppData\Local\Google\Chrome\User Data\Default

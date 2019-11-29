@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>My Weather Search</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<div class="ion-padding">
+	<ion-grid>
+		<ion-row>
+			<ion-col size="8">
+				<ion-searchbar placeholder="Enter a city to search" (keyup.enter)="retrieveWeather()" [(ngModel)]="weatherService.city">	
+				</ion-searchbar>
+			</ion-col>
+			<ion-col align-self-center>
+				<ion-button color="secondary" expand ="full" (click)="retrieveWeather()">Search
+				</ion-button>
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+	<ion-list *ngIf="weatherService.found">
+		<ion-item [routerLink]="'/weather/'+weather.dt" *ngFor="let weather of weatherService.weathers">
+			<!-- display weather icon -->
+			<ion-thumbnail slot="start">
+				<!--img src="getWeatherIcon(weather.weather[0].icon)"-->
+				<img src="http://openweathermap.org/img/wn/{{weather.weather[0].icon}}@2x.png">
+			</ion-thumbnail>
+			<ion-label>
+				<h3>{{weather.dt * 1000 | date:'medium'}}</h3>
+				<p>{{weather.weather[0].main}} : {{weather.weather[0].description}}</p>
+				<p>{{weather.temp.day - 273.15 | number}} &deg;C</p>
+			</ion-label>
+			<ion-button fill="outline" slot="end">View</ion-button>
+		</ion-item>
+	</ion-list>
+	<div *ngIf="!weatherService.found">
+		<h2>City not found. Please try with another city</h2>
+	</div>
+</div>
+</ion-content>

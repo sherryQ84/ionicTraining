@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Hello World
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-padding">
+    
+    Welcome to my application.
+    <br>My name is {{name}}.
+    <br>    
+    <br>Number of choice = {{num}}.
+    <br><ion-button color="primary" expand="full" shape="round" (click)="incrementPressed()">Increment</ion-button>
+    <ion-button color="secondary" expand="full" shape="round" (click)="decrementPressed()">Decrement</ion-button>
+    <ion-button color="danger" expand="full" shape="round" (click)="resetPressed()">Reset</ion-button>
+	<font color="danger">{{message}}</font>
+    <br><br>
+    <ion-button color="warning" expand="full" shape="round" (click)="alertPressed()">Show Alert</ion-button>
+    <ion-button color="tertiary" expand="full" shape="round" (click)="actSheetPressed()">Show Action Sheet</ion-button>
+    <font color="danger">{{actMessage}}</font>
+    
+    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
+  </div>
+</ion-content>
